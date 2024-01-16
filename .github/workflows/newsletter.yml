@@ -4,7 +4,7 @@ on:
   schedule:
     # Send the newsletter daily at 7:15 am.
     # If your not familiar with cron, this can ease the configuration https://crontab.guru/#15_7_*_*_* 
-    - cron: '10,15,20,25 11 * * *'
+    - cron: '20,25 11 * * *'
   # This allows you to manually run the workflow in the repository's "Actions" tab.
   workflow_dispatch:
 
@@ -16,14 +16,14 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
-          python-version: 3.8
+          python-version: 3.11
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install python-dotenv
       - name: Send the newsletter to the subscribers
         env:
-          GMAIL_USERNAME: ${{ secrets.GMAIL_ADDRESS }}
-          GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
+          GMAIL_USERNAME: intospectro.newsletter@gmail.com
+          GMAIL_PASSWORD: zldt fevv sxat bnim
         run: |
           python newsletter.py
