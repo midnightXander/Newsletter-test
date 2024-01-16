@@ -4,7 +4,7 @@ on:
   schedule:
     # Send the newsletter daily at 7:15 am.
     # If your not familiar with cron, this can ease the configuration https://crontab.guru/#15_7_*_*_* 
-    - cron: '10,15,20 15,16,17 * * *'
+    - cron: '10,15,20 14,15,16 * * *'
   # This allows you to manually run the workflow in the repository's "Actions" tab.
   workflow_dispatch:
 
