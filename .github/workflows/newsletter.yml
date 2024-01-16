@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: echo "sending from ${{ secrets.GMAIL_ADRESS }}"
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
@@ -23,7 +24,7 @@ jobs:
           python -m pip install python-dotenv
       - name: Send the newsletter to the subscribers
         env:
-          GMAIL_USERNAME: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_ADRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
         run: |
           python newsletter.py
