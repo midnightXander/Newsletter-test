@@ -24,7 +24,7 @@ jobs:
           python -m pip install python-dotenv
       - name: Send the newsletter to the subscribers
         env:
-          GMAIL_ADRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_USERNAME: ${{ secrets.GMAIL_ADRESS }}
           GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
         run: |
           python newsletter.py
